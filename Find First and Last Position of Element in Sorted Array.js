@@ -11,7 +11,14 @@
  * @return {number[]}
  */
 var searchRange = function(nums, target) {
-    // find the first index and last index of a elements
-    let search = [nums.indexOf(target) || -1, nums.lastIndexOf(target) || -1]; 
-    return search;
-};
+
+
+    let search;
+    if(nums.includes(target)){
+        search = [nums.indexOf(target), nums.lastIndexOf(target)]; 
+        return search;
+    }else{
+        return[-1,-1];
+    }
+    
+    };
