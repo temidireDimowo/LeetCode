@@ -35,5 +35,5 @@
 # | 10 | 20 | 15 | Yes      |
 # +----+----+----+----------+
 
-SELECT x,y,z, (CASE WHEN (ABS(y-z) = ABS(z-x) OR ABS(z-y) = ABS(y-x) OR ABS(y-x) = ABS(x-z) ) then 'Yes' else 'No' end) AS triangle
-FROM Triangle
+SELECT x,y,z, (CASE WHEN ( y >= x+z OR z >= x+y OR x >= z+y )  then 'No' else 'Yes' end) AS triangle
+FROM Triangle;
